@@ -1,0 +1,9 @@
+**/node_modules/
+
+cms/.strapi-updater.json
+cms/build/**
+cms/.tmp/**
+cms/.cache/**
+
+static/out/**
+static/.next/**

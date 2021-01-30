@@ -1,5 +1,6 @@
 {
-  "name": "cms-strapi",
+  "name": "zathura",
+  "private": true,
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
