@@ -9,12 +9,12 @@ cms/build/**
 cms/.cache/**
 cms/.tmp/**
 cms/public/uploads/**
-!cms/public/uploads/.gitkeep
 
-# production
-static/build/**
+build/**
 
 # debug
 **/npm-debug.log*
 **/yarn-debug.log*
 **/yarn-error.log*
+
+!**/.gitkeep

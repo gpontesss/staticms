@@ -6,17 +6,15 @@ services:
     ports:
       - 8080:80
     volumes:
-      - static:/usr/share/nginx/html/:ro
+      - static:/usr/share/nginx/html:ro
     depends_on:
       - cms
 
   cms:
     build: .
     volumes:
-      - cms-db:/app/cms/.tmp/
-      - static:/app/static/out/
-    environment:
-      - NEXT_PUBLIC_STRAPI_API_URL=http://cms:1337
+      - cms-db:/app/cms/.tmp
+      - static:/app/build
     ports:
       - 1337:1337
 
