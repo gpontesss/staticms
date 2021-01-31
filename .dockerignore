@@ -1,4 +1,4 @@
-**/node_modules/
+**/node_modules/**
 
 cms/.strapi-updater.json
 cms/build/**

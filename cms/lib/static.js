@@ -1,6 +1,7 @@
 var sh = require("shelljs");
+const { execFile } = require("child_process");
 
-module.exports.rebuildStatic = (modelCfg) => {
+module.exports.rebuildOnUpdate = (modelCfg) => {
     return {
         lifecycles: {
             // TODO: make it parameterizable
@@ -14,14 +15,16 @@ module.exports.rebuildStatic = (modelCfg) => {
 }
 
 function refreshBuild(fn) {
-    return (...args) => {
-        runScript("/path/to/script");
+    return async (...args) => {
+        const child = execFile("./lib/rebuild_static.sh");
+
+        child.stdout.on("data", console.log);
+        child.on("exit", (code, signal) => {
+            console.log("Finish rebuild:", code, signal);
+        });
+
         if(fn != undefined) {
-            fn(...args);
+            await fn(...args);
         }
     }
-}
-
-function runScript(path, ...args) {
-    console.log(path);
 }

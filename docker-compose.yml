@@ -13,11 +13,13 @@ services:
   cms:
     build: .
     volumes:
-      - cms-db:/app/cms/.tmp
       - static:/app/build
+      - cms-db:/app/cms/.tmp
+      - uploads:/app/cms/public/uploads
     ports:
       - 1337:1337
 
 volumes:
   cms-db: {}
   static: {}
+  uploads: {}

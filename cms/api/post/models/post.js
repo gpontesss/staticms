@@ -7,4 +7,4 @@ const staticBuild = require("../../../lib/static");
  * to customize this model
  */
 
-module.exports = staticBuild.rebuildStatic({});
+module.exports = staticBuild.rebuildOnUpdate({});
