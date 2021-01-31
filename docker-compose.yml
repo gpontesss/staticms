@@ -4,7 +4,7 @@ services:
   static:
     image: nginx
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - static:/usr/share/nginx/html:ro
     depends_on:
